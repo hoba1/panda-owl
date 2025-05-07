@@ -13,8 +13,10 @@
       rel="stylesheet"
       href="./assets/vendor/bootstrap/css/bootstrap.min.css"
     />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/contact.css" />
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,205 +28,176 @@
   </head>
   <body>
     <!-- NavBar -->
-    <nav
-      class="navbar navbar-expand-lg"
-      id="navbar"
-      style="
-        background-color: var(--secondary-bg-color);
-        border-bottom: 1px solid var(--main-color);
-      "
-    >
-      <div class="container d-flex justify-content-between text-white">
-        <div class="logo-toggler d-flex justify-content-between">
-          <div
-            class="d-flex justify-content-between align-items-center w-100"
-            style="min-width: 400px"
+    <nav class="navbar navbar-expand-lg" id="navbar">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between w-100">
+          <a
+            class="navbar-brand fw-bold d-flex align-items-center"
+            href="index.html"
           >
-            <a
-              class="navbar-brand fw-bold d-flex align-items-center justify-content-between"
-              href="index.html"
-            >
-              <img
-                src="./assets/imgs/logo.png"
-                alt=""
-                style="width: 70px; height: 70px"
-              />
-            </a>
-            <h3 class="mb-0 fw-bold " style="color: #786155; text-transform: uppercase;">Panda & Owl Store</h3>
-            <button
-              class="navbar-toggler shadow-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i class="fa-solid fa-bars"></i>
-            </button>
+            <img
+              src="./assets/imgs/logo.png"
+              alt="Panda & Owl Logo"
+              class="navbar-logo"
+            />
+            <h3 class="mb-0 ms-2 fw-bold site-title" style="color: white">
+              Panda & Owl Store
+            </h3>
+          </a>
+          <div id="navTogglerIcon" class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
-        <div
-          class="collapse navbar-collapse flex-grow-0 w-100 justify-content-between"
-          id="navbarNav"
-        >
+
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto gap-2">
             <li class="nav-item">
-              <a
-                class="nav-link fs-5 text-black active"
-                href="./home.html#home"
-              >
-                Home
-              </a>
+              <a class="nav-link fs-5 text-white" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./home.html#about"
-                >About</a
+              <a class="nav-link fs-5 text-white" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5 text-white" href="#categories"
+                >Categories</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./home.html#categories">
-                Categories
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./contact.html">
-                Contact
-              </a>
+              <a class="nav-link fs-5 text-white active" href="./contact.html"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container d-flex flex-column min-vh-100 gap-4">
-      <div class="w-100 d-flex align-items-center justify-content-center my-5">
+    <div class="container">
+      <div class="logo-animation">
         <video
           src="./assets/imgs/logo video.mp4"
           autoplay
           muted
           loop
-          width="300px"
-          height="300px"
+          class="w-100 h-100 object-fit-cover"
         ></video>
       </div>
 
-      <!-- Products -->
-      <div class="products mt-5 pt-5 mb-5">
-        <h2
-          class="section-title position-relative fw-bold overflow-hidden m-auto mt-4 mb-4"
-        >
-          <span class="w-100 position-absolute top-0 start-0"></span>
-          <span class="h-100 position-absolute top-0 end-0"></span>
-          <span class="w-100 position-absolute bottom-0 end-0"></span>
-          <span class="h-100 position-absolute bottom-0 start-0"></span>
-          Contact
-        </h2>
-
-        <div class="d-flex flex-column flex-wrap flex-grow-1 gap-5">
-          <h4 class="my-3">
-            Contact Us (Please leave your phone number and you will contact you)
+      <div class="contact-section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-form">
+          <h4 class="text-center mb-4" style="color: var(--secondary-color)">
+            Leave your details and we'll get back to you soon
           </h4>
-          <div class="input-group d-flex gap-3 w-100 flex-wrap">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Username"
-              aria-label="Username"
-            />
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Phone"
-              aria-label="Phone"
-            />
-          </div>
-          <div class="w-100">
-            <label for="exampleFormControlInput1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
-            />
-          </div>
-          <div class="w-100">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Message</label
-            >
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="5"
-            ></textarea>
-          </div>
-          <button
-            class="btn text-white btn-lg contained-btn d-flex gap-3 text-center"
-            style="
-              background-color: var(--main-color);
-              border: 2px solid var(--main-color);
-              width: 90px;
-            "
-          >
-            Send
-          </button>
-        </div>
-      </div>
 
-      <!-- Footer -->
-      <div
-        class="footer mt-5 p-4"
-        style="border-top: 1px solid var(--main-color)"
-      >
-        <div class="container">
-          <div
-            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex align-items-center justify-content-center"
-          >
-            <div class="d-flex align-items-center justify-content-center">
-              <img
-                src="./assets/imgs/logo.png"
-                style="width: 100px; height: 100px"
-              />
-            </div>
-            <div class="copyright">
-              <div class="container text-center">
-                <p>
-                  © <span>Copyright</span>
-                  <strong class="px-1 sitename" style="color: var(--main-color)"
-                    >PANDA & OWL</strong
-                  >
-                  <span>All Rights Reserved</span>
-                </p>
-                <div class="credits">
-                  Designed by
-                  <a href="#" style="color: var(--main-color)">GMT</a>
+          <form class="d-flex flex-column gap-3">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Phone</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    placeholder="Your phone number"
+                    required
+                  />
                 </div>
               </div>
             </div>
-            <div>
-              <div
-                class="icons-brands d-flex gap-4 align-items-center justify-content-center"
-              >
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-facebook fa-2xl"></i
-                ></a>
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-instagram fa-2xl"></i
-                ></a>
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-tiktok fa-2xl"></i
-                ></a>
-              </div>
-              <p class="mt-2 mb-0 text-center" style="font-size: 14px">
-                Follow Us To Get The Latest Updates
-              </p>
+
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="your.email@example.com"
+                required
+              />
             </div>
-          </div>
+
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                rows="5"
+                placeholder="How can we help you?"
+                required
+              ></textarea>
+            </div>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane me-2"></i>Send Message
+              </button>
+            </div>
+          </form>
         </div>
       </div>
+
+     
     </div>
+     <!-- Footer -->
+      <footer class="footer mt-auto">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>About Us</h4>
+              <p>
+                Panda & Owl Store is your premier destination for unique and
+                high-quality products.
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>Quick Links</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#" class="text-white text-decoration-none">Home</a>
+                </li>
+                <li>
+                  <a href="#" class="text-white text-decoration-none">About</a>
+                </li>
+                <li>
+                  <a href="#" class="text-white text-decoration-none"
+                    >Categories</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-white text-decoration-none"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Contact Us</h4>
+              <p>Email: info@pandaowl.com</p>
+              <p>Phone: +1 234 567 890</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2024 Panda & Owl Store. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
 
     <!-- FontAwesome -->
     <script src="./assets/vendor/fontAwesome/js/all.min.js"></script>
