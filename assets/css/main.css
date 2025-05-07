@@ -1,9 +1,10 @@
-:root {
-  --background-color: #fff; /*#16161a*/
-  --secondary-bg-color: #eee;
-  --main-color: #F66B40; /*#03A9F4*/
-  --second-color: #18DDEE; /*#03A9F4*/
-}
+ :root {
+        --main-color: #594a42;
+        --secondary-color: #9c7b5d;
+        --accent-color: #d4b996;
+        --bg-color: #f8f9fa;
+        --text-color: #2c3e50;
+      }
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -103,7 +104,7 @@ body {
 /* Start NavBar */
 .navbar-nav .nav-item a:hover,
 .navbar-nav .nav-item a.active {
-  color: var(--main-color) !important;
+  color: var(--main-color);
 }
 .navbar-nav .nav-item .btn.rounded-pill {
   color: black !important;
