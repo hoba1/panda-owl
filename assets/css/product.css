@@ -1,0 +1,461 @@
+/* Product Page Styles */
+:root {
+  --product-image-height: 450px;
+  --thumbnail-size: 100px;
+  --modal-overlay: rgba(0, 0, 0, 0.9);
+  --tab-border-radius: 12px;
+}
+
+/* Product Container */
+.product {
+  padding: 2rem 0;
+ 
+  border-radius: 20px;
+}
+
+/* Product Title and Price Section */
+.title-and-price {
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.category-label {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(89, 74, 66, 0.1),
+    rgba(156, 123, 93, 0.1)
+  );
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.category-label i {
+  color: var(--main-color);
+  font-size: 1.1rem;
+}
+
+.category-label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* RTL Support for Category Label */
+[dir="rtl"] .category-label {
+  flex-direction: row-reverse;
+}
+
+.title-and-price h2 {
+  color: var(--main-color);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+/* Price Display */
+.price-display {
+  background: linear-gradient(
+    135deg,
+    rgba(89, 74, 66, 0.1),
+    rgba(156, 123, 93, 0.1)
+  );
+  padding: 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  position: relative;
+ 
+}
+
+.current-price {
+  color: var(--main-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.original-price {
+    display: flex;
+  color: #999;
+  text-decoration: line-through;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.discount-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: var(--main-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Order Button */
+.order-btn {
+  background: linear-gradient(
+    135deg,
+    var(--main-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.order-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--main-color)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.order-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.order-btn:hover::before {
+  opacity: 1;
+}
+.price-container{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Product Images Section */
+.images-of-product {
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.main-product-image {
+  width: 100%;
+  height: var(--product-image-height);
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.main-product-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-thumbnails {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.product-thumbnail {
+  width: var(--thumbnail-size);
+  height: var(--thumbnail-size);
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  opacity: 0.7;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-thumbnail:hover,
+.product-thumbnail.active {
+  transform: scale(1.05);
+  border-color: var(--main-color);
+  opacity: 1;
+}
+
+/* Product Tabs */
+.nav-tabs {
+  border: none;
+  background: rgba(89, 74, 66, 0.05);
+  border-radius: var(--tab-border-radius);
+  padding: 0.5rem;
+  margin: 2rem 0;
+}
+
+.nav-link-description {
+  color: var(--main-color);
+  border: none;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  border-radius: calc(var(--tab-border-radius) - 4px);
+  margin: 0 0.25rem;
+}
+
+.nav-link-description:hover {
+  color: var(--secondary-color);
+}
+
+.nav-link-description.active {
+  color: white;
+  background: linear-gradient(
+    135deg,
+    var(--main-color),
+    var(--secondary-color)
+  );
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.tab-pane {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  padding: 1.2rem;
+  position: relative;
+  border-bottom: 1px solid rgba(89, 74, 66, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.features-list li:last-child {
+  border-bottom: none;
+}
+
+.features-list li:hover {
+  background: linear-gradient(to right, rgba(89, 74, 66, 0.05), transparent);
+  transform: translateX(5px);
+}
+
+.features-list li i {
+  color: var(--main-color);
+  font-size: 1.2rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.features-list .feature-text {
+  flex: 1;
+  line-height: 1.6;
+}
+
+/* RTL Support for Features List */
+[dir="rtl"] .features-list li {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .features-list li:hover {
+  transform: translateX(-5px);
+}
+
+/* Image Modal */
+.image-modal .modal-dialog {
+  max-width: 90%;
+  margin: 1.75rem auto;
+}
+
+.image-modal .modal-content {
+  background: transparent;
+  border: none;
+}
+
+.modal-image-container {
+  position: relative;
+  padding: 2rem;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1060;
+}
+
+.modal-close:hover {
+  transform: rotate(90deg);
+  background: var(--main-color);
+  color: white;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1060;
+}
+
+.modal-nav:hover {
+  background: var(--main-color);
+  color: white;
+}
+
+.modal-prev {
+  left: 1rem;
+}
+
+.modal-next {
+  right: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  :root {
+    --product-image-height: 400px;
+  }
+
+  .title-and-price h2 {
+    font-size: 2rem;
+  }
+
+  .current-price {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .product > .d-flex {
+    flex-direction: column-reverse;
+  }
+
+  .title-and-price,
+  .images-of-product {
+    width: 100% !important;
+  }
+
+  .nav-link-description {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .tab-content {
+    padding: 1.5rem;
+  }
+
+  .modal-nav {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --product-image-height: 300px;
+    --thumbnail-size: 70px;
+  }
+
+  .title-and-price {
+    padding: 1.5rem;
+  }
+
+  .title-and-price h2 {
+    font-size: 1.5rem;
+  }
+
+  .current-price {
+    font-size: 1.8rem;
+  }
+
+  .order-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .product-thumbnails {
+    gap: 1rem;
+  }
+
+  .modal-close,
+  .modal-nav {
+    width: 35px;
+    height: 35px;
+  }
+}

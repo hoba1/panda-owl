@@ -6,8 +6,10 @@
     <link rel="icon" href="./assets/imgs/logo.png" />
     <!-- normalize -->
     <link rel="stylesheet" href="./assets/css/normalise.css" />
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="./assets/vendor/fontAwesome/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -54,18 +56,18 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto gap-2">
             <li class="nav-item">
-              <a class="nav-link fs-5 text-white" href="#home">Home</a>
+              <a class="nav-link fs-5 text-white" href="home.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-white" href="#about">About</a>
+              <a class="nav-link fs-5 text-white" href="products.html">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-white" href="#categories"
+              <a class="nav-link fs-5 text-white" href="categories.html"
                 >Categories</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-white active" href="./contact.html"
+              <a class="nav-link fs-5 text-white active" href="contact.html"
                 >Contact</a
               >
             </li>
@@ -199,11 +201,59 @@
         </div>
       </footer>
 
+      <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- FontAwesome -->
     <script src="./assets/vendor/fontAwesome/js/all.min.js"></script>
     <!-- Bootstrap -->
     <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- main js -->
-    <script src="./assets/js/main.js"></script>
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const navToggler = document.getElementById("navTogglerIcon");
+        const navbarCollapse = document.getElementById("navbarNav");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const backToTop = document.getElementById("backToTop");
+
+        // Toggle menu open/close
+        navToggler.addEventListener("click", function () {
+          navbarCollapse.classList.toggle("show");
+          navToggler.classList.toggle("active");
+        });
+
+        // Close navbar on nav-link click (for mobile)
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            navbarCollapse.classList.remove("show");
+            navToggler.classList.remove("active");
+          });
+        });
+
+        // Show back-to-top button
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTop.style.display = "flex";
+          } else {
+            backToTop.style.display = "none";
+          }
+          // Auto-close navbar on scroll (for mobile)
+          if (navbarCollapse.classList.contains("show")) {
+            navbarCollapse.classList.remove("show");
+            navToggler.classList.remove("active");
+          }
+        });
+
+        // Scroll to top
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
   </body>
 </html>

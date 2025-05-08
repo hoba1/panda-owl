@@ -6,15 +6,17 @@
     <link rel="icon" href="./assets/imgs/logo.png" />
     <!-- normalize -->
     <link rel="stylesheet" href="./assets/css/normalise.css" />
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="./assets/vendor/fontAwesome/css/all.min.css" />
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
       href="./assets/vendor/bootstrap/css/bootstrap.min.css"
     />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/products.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,85 +28,96 @@
   </head>
   <body>
     <!-- NavBar -->
-    <nav
-      class="navbar navbar-expand-lg"
-      id="navbar"
-      style="
-        background-color: var(--secondary-bg-color);
-        border-bottom: 1px solid var(--main-color);
-      "
-    >
-      <div class="container d-flex justify-content-between text-white">
-        <div class="logo-toggler d-flex justify-content-between">
-          <div
-            class="d-flex justify-content-between align-items-center w-100"
-            style="min-width: 400px"
+    <nav class="navbar navbar-expand-lg" id="navbar">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between w-100">
+          <a
+            class="navbar-brand fw-bold d-flex align-items-center"
+            href="index.html"
           >
-            <a
-              class="navbar-brand fw-bold d-flex align-items-center justify-content-between"
-              href="index.html"
-            >
-              <img
-                src="./assets/imgs/logo.png"
-                alt=""
-                style="width: 70px; height: 70px"
-              />
-            </a>
-            <h3 class="mb-0 fw-bold " style="color: #786155; text-transform: uppercase;">Panda & Owl Store</h3>
-            <button
-              class="navbar-toggler shadow-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i class="fa-solid fa-bars"></i>
-            </button>
+            <img
+              src="./assets/imgs/logo.png"
+              alt="Panda & Owl Logo"
+              class="navbar-logo"
+            />
+            <h3 class="mb-0 ms-2 fw-bold site-title" style="color: white">
+              Panda & Owl Store
+            </h3>
+          </a>
+          <div id="navTogglerIcon" class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
-        <div
-          class="collapse navbar-collapse flex-grow-0 w-100 justify-content-between"
-          id="navbarNav"
-        >
-          <div class="d-flex align-items-center justify-content-center">
-            <input
-              class="form-control"
-              type="text"
-              placeholder="Search"
-              aria-label="default input example"
-              style="width: 300px"
-            />
-          </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto gap-2">
             <li class="nav-item">
-              <a
-                class="nav-link fs-5 text-black active"
-                href="./home.html#home"
-              >
-                Home
-              </a>
+              <a class="nav-link fs-5 text-white" href="home.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./home.html#about"
-                >About</a
+              <a class="nav-link fs-5 text-white active" href="products.html"
+                >Products</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./home.html#categories">
-                Categories
-              </a>
+              <a class="nav-link fs-5 text-white" href="categories.html"
+                >Categories</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./contact.html">
-                Contact
-              </a>
+              <a class="nav-link fs-5 text-white" href="contact.html"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Search Section -->
+    <div
+      class="search-section py-4"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--main-color),
+          var(--secondary-color)
+        );
+      "
+    >
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="search-container">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control search-input"
+                  placeholder="Search products"
+                  aria-label="Search products"
+                />
+                <div class="input-group-append">
+                  <button class="btn search-btn" type="button">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="search-filters mt-3 d-flex gap-2 flex-wrap justify-content-center"
+              >
+                <button class="btn filter-chip active">All</button>
+                <button class="btn filter-chip">Electronics</button>
+                <button class="btn filter-chip">Kitchen</button>
+                <button class="btn filter-chip">Fashion</button>
+                <button class="btn filter-chip">Home</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="container d-flex flex-column min-vh-100 gap-4">
       <div class="w-100 d-flex align-items-center justify-content-center my-5">
@@ -119,160 +132,213 @@
       </div>
 
       <!-- Products -->
-      <div class="products mt-5 pt-5 mb-5">
-        <h2
-          class="section-title position-relative fw-bold overflow-hidden m-auto mt-4 mb-4"
-        >
-          <span class="w-100 position-absolute top-0 start-0"></span>
-          <span class="h-100 position-absolute top-0 end-0"></span>
-          <span class="w-100 position-absolute bottom-0 end-0"></span>
-          <span class="h-100 position-absolute bottom-0 start-0"></span>
-          Products
-        </h2>
-
-        <div
-          class="d-flex gap-5 w-100 align-items-center justify-content-center flex-wrap my-5"
-        >
-          <button
-            class="btn text-white btn-lg contained-btn d-flex gap-3"
-            style="
-              background-color: var(--main-color);
-              border: 2px solid var(--main-color);
-            "
-          >
-            Latest Products
-            <div class="arrows">
-              <i class="fa-solid fa-arrow-up"></i>
-              <i class="fa-solid fa-arrow-down"></i>
-            </div>
-          </button>
+      <div class="products mt-5 mb-5">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title">Products</h2>
+          <p class="text-muted">Discover our amazing collection</p>
         </div>
 
-        <div class="d-flex flex-grow-1">
+        <div class="sorting-section mb-4">
           <div
-            class="d-flex flex-wrap justify-content-center align-items-center flex-grow-1 gap-5"
+            class="d-flex justify-content-between align-items-center flex-wrap gap-3"
           >
-            <div
-              class="product-card card my-3 shadow rounded position-relative"
-              style="cursor: pointer; width: 250px"
-              onclick="window.location.href = 'product.html';"
-            >
-              <div class="icon text-center">
-                <img
-                  src="./assets/imgs/product/2.jpg"
-                  alt="flag"
-                  style="width: 100%; height: 200px"
-                  class=""
-                />
-              </div>
-              <div class="info d-flex flex-column pt-4">
-                <p class="product-category ps-3">Electronics</p>
-                <h4 class="product-name px-3">
-                  منظم التوابل الدوار 360 درجة + طابعة حرارية صغيرة بلوتوث بدون
-                  حبر لطباعة
-                </h4>
-                <div
-                  class="d-flex w-100 align-items-center justify-content-between mt-2"
-                >
-                  <div class="d-flex gap-1">
-                    <p style="color: var(--main-color)" class="ps-3 fs-5">
-                      1300$
-                    </p>
-                    <p
-                      style="text-decoration: line-through; font-size: 14px"
-                      class="ps-3"
-                    >
-                      1500$
-                    </p>
-                  </div>
-                  <a
-                    href="https://damenkom-orders.com?id=f1465704-6510-47a6-ba73-da085b7320d1"
-                  >
-                    <div
-                      class="p-2"
-                      style="background-color: #00bf62; border-radius: 8px 0"
-                    >
-                      <i
-                        class="fa-solid fa-cart-shopping fa-xl"
-                        style="color: white"
-                      ></i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div
-                class="discount position-absolute px-2 pe-3"
-                style="
-                  top: 20px;
-                  background-color: var(--main-color);
-                  color: white;
-                "
-              >
-                -13%
-              </div>
+            <div class="results-count">
+              <p class="mb-0">Showing 24 products</p>
+            </div>
+            <div class="sorting-buttons d-flex gap-2">
+              <button class="btn sort-btn">
+                <i class="fas fa-sort-amount-down"></i>
+                Latest
+              </button>
+              <button class="btn sort-btn">
+                <i class="fas fa-dollar-sign"></i>
+                Price
+              </button>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Footer -->
-      <div
-        class="footer mt-5 p-4"
-        style="border-top: 1px solid var(--main-color)"
-      >
-        <div class="container">
-          <div
-            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex align-items-center justify-content-center"
-          >
-            <div class="d-flex align-items-center justify-content-center">
-              <img
-                src="./assets/imgs/logo.png"
-                style="width: 100px; height: 100px"
-              />
-            </div>
-            <div class="copyright">
-              <div class="container text-center">
-                <p>
-                  © <span>Copyright</span>
-                  <strong class="px-1 sitename" style="color: var(--main-color)"
-                    >PANDA & OWL</strong
-                  >
-                  <span>All Rights Reserved</span>
-                </p>
-                <div class="credits">
-                  Designed by
-                  <a href="#" style="color: var(--main-color)">GMT</a>
+        <div class="products-grid">
+          <!-- Product Card Template - Will be repeated -->
+          <div class="product-card shadow-sm">
+            <div class="discount-badge">-13%</div>
+            <img
+              src="./assets/imgs/product/2.jpg"
+              alt="Product"
+              class="product-image"
+            />
+            <div class="product-info">
+              <p class="product-category mb-2">Electronics</p>
+              <h4 class="product-name">360° Spice Organizer + Mini Thermal Printer</h4>
+              <div class="price-container">
+                <div class="price">
+                  <span class="current-price">1300$</span>
+                  <span class="original-price">1500$</span>
                 </div>
+                <a href="#" class="cart-btn">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
               </div>
-            </div>
-            <div>
-              <div
-                class="icons-brands d-flex gap-4 align-items-center justify-content-center"
-              >
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-facebook fa-2xl"></i
-                ></a>
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-instagram fa-2xl"></i
-                ></a>
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-tiktok fa-2xl"></i
-                ></a>
-              </div>
-              <p class="mt-2 mb-0 text-center" style="font-size: 14px">
-                Follow Us To Get The Latest Updates
-              </p>
             </div>
           </div>
+
+          <!-- Duplicate product cards with different images and details -->
+          <div class="product-card shadow-sm">
+            <div class="discount-badge">-20%</div>
+            <img
+              src="./assets/imgs/product/1.jpg"
+              alt="Product"
+              class="product-image"
+            />
+            <div class="product-info">
+              <p class="product-category mb-2">Kitchen</p>
+              <h4 class="product-name">Multi-purpose Kitchen Set</h4>
+              <div class="price-container">
+                <div class="price">
+                  <span class="current-price">800$</span>
+                  <span class="original-price">1000$</span>
+                </div>
+                <a href="#" class="cart-btn">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more product cards here -->
         </div>
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>About Us</h4>
+            <p>
+              Panda & Owl Store is your premier destination for unique and
+              high-quality products.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">About</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>Email: info@pandaowl.com</p>
+            <p>Phone: +1 234 567 890</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Panda & Owl Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- FontAwesome -->
     <script src="./assets/vendor/fontAwesome/js/all.min.js"></script>
     <!-- Bootstrap -->
     <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- main js -->
-    <script src="./assets/js/main.js"></script>
+    
+
+    <!-- Products Page Scripts -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const navToggler = document.getElementById("navTogglerIcon");
+        const navbarCollapse = document.getElementById("navbarNav");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const backToTop = document.getElementById("backToTop");
+
+        // Toggle menu open/close
+        navToggler.addEventListener("click", function () {
+          navbarCollapse.classList.toggle("show");
+          navToggler.classList.toggle("active");
+        });
+
+        // Close navbar on nav-link click (for mobile)
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            navbarCollapse.classList.remove("show");
+            navToggler.classList.remove("active");
+          });
+        });
+
+        // Show back-to-top button
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTop.style.display = "flex";
+          } else {
+            backToTop.style.display = "none";
+          }
+          // Auto-close navbar on scroll (for mobile)
+          if (navbarCollapse.classList.contains("show")) {
+            navbarCollapse.classList.remove("show");
+            navToggler.classList.remove("active");
+          }
+        });
+
+        // Scroll to top
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+      // Language Toggle
+      let isEnglish = true;
+      function toggleLanguage() {
+        isEnglish = !isEnglish;
+        document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+        document.documentElement.lang = isEnglish ? "en" : "ar";
+      }
+
+      // Filter Buttons
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          // Add filter logic here
+        });
+      });
+
+      // Sort Functions
+      function sortByLatest() {
+        // Add sorting logic here
+      }
+
+      function sortByPrice() {
+        // Add sorting logic here
+      }
+    </script>
   </body>
 </html>

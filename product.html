@@ -7,14 +7,17 @@
     <!-- normalize -->
     <link rel="stylesheet" href="./assets/css/normalise.css" />
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="./assets/vendor/fontAwesome/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
       href="./assets/vendor/bootstrap/css/bootstrap.min.css"
     />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/product.css">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,64 +29,46 @@
   </head>
   <body>
     <!-- NavBar -->
-    <nav
-      class="navbar navbar-expand-lg"
-      id="navbar"
-      style="
-        background-color: var(--secondary-bg-color);
-        border-bottom: 1px solid var(--main-color);
-      "
-    >
-      <div class="container d-flex justify-content-between text-white">
-        <div class="logo-toggler d-flex justify-content-between">
-          <div
-          class="d-flex justify-content-between align-items-center w-100"
-          style="min-width: 400px"
-        >
+    <nav class="navbar navbar-expand-lg" id="navbar">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between w-100">
           <a
-            class="navbar-brand fw-bold d-flex align-items-center justify-content-between"
+            class="navbar-brand fw-bold d-flex align-items-center"
             href="index.html"
           >
             <img
               src="./assets/imgs/logo.png"
-              alt=""
-              style="width: 70px; height: 70px"
+              alt="Panda & Owl Logo"
+              class="navbar-logo"
             />
+            <h3 class="mb-0 ms-2 fw-bold site-title" style="color: white">
+              Panda & Owl Store
+            </h3>
           </a>
-          <h3 class="mb-0 fw-bold " style="color: #786155; text-transform: uppercase;">Panda & Owl Store</h3>
-          <button
-            class="navbar-toggler shadow-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fa-solid fa-bars"></i>
-          </button>
+          <div id="navTogglerIcon" class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-        </div>
-        <div
-          class="collapse navbar-collapse flex-grow-0 w-100 justify-content-between"
-          id="navbarNav"
-        >
+
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto gap-2">
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black active" href="./home.html#home"> Home </a>
+              <a class="nav-link fs-5 text-white" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./home.html#about">About</a>
+              <a class="nav-link fs-5 text-white" href="#about">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./home.html#categories">
-                Categories
-              </a>
+              <a class="nav-link fs-5 text-white" href="#categories"
+                >Categories</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 text-black" href="./contact.html">
-                Contact
-              </a>
+              <a class="nav-link fs-5 text-white" href="./contact.html"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
@@ -93,118 +78,199 @@
 
     <!-- product -->
      <div class="product container my-5">
-        <div class="d-flex align-items-center justify-content-space-between gap-4 w-100">
+        <div class="d-flex align-items-start justify-content-between gap-4 w-100">
             <div class="title-and-price w-50">
-                <p>ELECTRONICS</p>
-                <h2 dir="rtl">منظم التوابل الدوار 360 درجة + طابعة حرارية صغيرة بلوتوث بدون حبر لطباعة</h2>
-                <div class="d-flex gap-1 mt-3">
-                    <p style="color: var(--main-color);" class="fs-2">1300$</p>
-                    <p style=" text-decoration: line-through; font-size: 14px;" class="ps-3">1500$</p>
+                <p class="category-label">
+                    <i class="fas fa-microchip"></i>
+                    <span>Electronics</span>
+                </p>
+                <h2 dir="rtl">منظم التوابل الدوار 360 درجة + طابعة حرارية صغيرة بلوتوث بدون حبر لطباعة</h2>
+                <div class="price-container">
+                <div class="price-display">
+                    <span class="current-price">1300$</span>
+                    <span class="original-price">1500$</span>
+                    <span class="discount-badge">-13%</span>
                 </div>
                 <a
-                    class="btn text-white btn-lg rounded-pill contained-btn"
-                    style="
-                        background-color: var(--main-color);
-                        border: 2px solid var(--main-color);
-                    "
+                    class="btn order-btn"
                     href="https://damenkom-orders.com?id=f1465704-6510-47a6-ba73-da085b7320d1"
-                    >
-                    Order Now
+                >
+                    <span>Order Now</span>
                 </a>
-                <ul class="nav nav-tabs mt-5 mb-3" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation" >
-                      <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane" type="button" role="tab" aria-controls="description-tab-pane" aria-selected="true" >description</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features-tab-pane" type="button" role="tab" aria-controls="features-tab-pane" aria-selected="false">features</button>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="description-tab-pane" role="tabpanel" aria-labelledby="description-tab" tabindex="0" dir="rtl">احصل على منظم التوابل الدوار 360° 🏡✨ + طابعة حرارية بلوتوث بدون حبر 🖨🔥 في عرض رهيب لا يفوتك! 🎉💯</div>
-                    <div class="tab-pane fade" id="features-tab-pane" role="tabpanel" aria-labelledby="features-tab" tabindex="0" dir="rtl">
-                        <ul >
-                            <li>منظم التوابل الدوار 360 درجة</li>
-                            <li>كل التوابل في متناول يدك: مش هتضيع وقتك في البحث عن التوابل تاني.</li>
-                            <li>مطبخك هيبقى مرتب وأنيق: هتودع الفوضى في دولاب التوابل.</li>
-                            <li>سهل الاستخدام جداً: حتى الأولاد الصغيرين يقدروا يستخدموه.</li>
-                            <li>بيوفر مساحة كبيرة في المطبخ: مش هتحتاج لدولاب كبير للتوابل.</li>
-                            <li>تصميمه العصري هيضيف لمسة جمالية لمطبخك: ه يخلي مطبخك شكله أحلى بكتير.</li>
-                            <li>طابعة حرارية صغيرة بلوتوث بدون حبر لطباعة</li>
-                            <li>صغيرة وخفيفة: تقدر تحطها في جيبك وتاخدها معاك في أي مكان.</li>
-                            <li>سهلة الاستخدام: ما فيهاش أي تعقيدات، هتعرف تستعملها من أول مرة.</li>
-                            <li>طباعة سريعة: استيكارات جاهز في ثواني، مش هتضطر تستنى كتير.</li>
-                            <li>متوافقة مع كل الموبايلات: سواء آيفون أو أندرويد، هتشتغل معاك زي الفل.</li>
-                        </ul>
+                </div>
+
+                <div class="product-details mt-5">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link-description active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane" type="button" role="tab" aria-controls="description-tab-pane" aria-selected="true">Description | الوصف</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link-description" id="features-tab" data-bs-toggle="tab" data-bs-target="#features-tab-pane" type="button" role="tab" aria-controls="features-tab-pane" aria-selected="false">Features | المميزات</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="description-tab-pane" role="tabpanel" aria-labelledby="description-tab" tabindex="0" dir="rtl">
+                            احصل على منظم التوابل الدوار 360° 🏡✨ + طابعة حرارية بلوتوث بدون حبر 🖨🔥 في عرض رهيب لا يفوتك! 🎉💯
+                        </div>
+                        <div class="tab-pane fade" id="features-tab-pane" role="tabpanel" aria-labelledby="features-tab" tabindex="0" dir="rtl">
+                            <ul class="features-list">
+                                <li>
+                                    <i class="fas fa-sync-alt"></i>
+                                    <span class="feature-text">منظم التوابل الدوار 360 درجة</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-hand-point-up"></i>
+                                    <span class="feature-text">كل التوابل في متناول يدك: مش هتضيع وقتك في البحث عن التوابل تاني</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-home"></i>
+                                    <span class="feature-text">مطبخك هيبقى مرتب وأنيق: هتودع الفوضى في دولاب التوابل</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-child"></i>
+                                    <span class="feature-text">سهل الاستخدام جداً: حتى الأولاد الصغيرين يقدروا يستخدموه</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-expand"></i>
+                                    <span class="feature-text">بيوفر مساحة كبيرة في المطبخ: مش هتحتاج لدولاب كبير للتوابل</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star"></i>
+                                    <span class="feature-text">تصميمه العصري هيضيف لمسة جمالية لمطبخك: ه يخلي مطبخك شكله أحلى بكتير</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-print"></i>
+                                    <span class="feature-text">طابعة حرارية صغيرة بلوتوث بدون حبر لطباعة</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-feather"></i>
+                                    <span class="feature-text">صغيرة وخفيفة: تقدر تحطها في جيبك وتاخدها معاك في أي مكان</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-magic"></i>
+                                    <span class="feature-text">سهلة الاستخدام: ما فيهاش أي تعقيدات، هتعرف تستعملها من أول مرة</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-bolt"></i>
+                                    <span class="feature-text">طباعة سريعة: استيكارات جاهز في ثواني، مش هتضطر تستنى كتير</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span class="feature-text">متوافقة مع كل الموبايلات: سواء آيفون أو أندرويد، هتشتغل معاك زي الفل</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="images-of-product w-50 d-flex align-items-center flex-column gap-4">
-                <img src="./assets/imgs/product/2.jpg" alt="" class="w-100" style="border: 1px solid var(--main-color); height: 400px;">
-                <div class="d-flex align-items-center justify-content-center gap-4 w-100 flex-wrap">
-                    <img src="./assets/imgs/product/1.jpg" alt="" class="w-25 product-image" style="border: 1px solid var(--main-color); transition: 0.5s;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="./assets/imgs/product/3.jpg" alt="" class="w-25 product-image" style="border: 1px solid var(--main-color); transition: 0.5s;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                </div>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered modal-lg p-5 bg-white">
-                    <img src="./assets/imgs/product/2.jpg" style="width: 100%; height: 500px;" class="modal-image"/>
-                  </div>
+            <div class="images-of-product w-50">
+                <img 
+                    src="./assets/imgs/product/2.jpg" 
+                    alt="Main product image" 
+                    class="main-product-image"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#imageModal"
+                >
+                <div class="product-thumbnails">
+                    <img 
+                        src="./assets/imgs/product/1.jpg" 
+                        alt="Product thumbnail 1" 
+                        class="product-thumbnail" 
+                        onclick="changeModalImage(0)"
+                    >
+                    <img 
+                        src="./assets/imgs/product/2.jpg" 
+                        alt="Product thumbnail 2" 
+                        class="product-thumbnail active" 
+                        onclick="changeModalImage(1)"
+                    >
+                    <img 
+                        src="./assets/imgs/product/3.jpg" 
+                        alt="Product thumbnail 3" 
+                        class="product-thumbnail" 
+                        onclick="changeModalImage(2)"
+                    >
                 </div>
             </div>
         </div>
-     </div>
 
-      <!-- Footer -->
-      <div
-        class="footer mt-5 p-4"
-        style="border-top: 1px solid var(--main-color)"
-      >
-        <div class="container">
-          <div
-            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex align-items-center justify-content-center"
-          >
-            <div class="d-flex align-items-center justify-content-center">
-              <img
-                src="./assets/imgs/logo.png"
-                style="width: 100px; height: 100px"
-              />
-            </div>
-            <div class="copyright">
-              <div class="container text-center">
-                <p>
-                  © <span>Copyright</span>
-                  <strong class="px-1 sitename" style="color: var(--main-color)"
-                    >PANDA & OWL</strong
-                  >
-                  <span>All Rights Reserved</span>
-                </p>
-                <div class="credits">
-                  Designed by
-                  <a href="#" style="color: var(--main-color)">GMT</a>
+        <!-- Image Modal -->
+        <div class="modal fade image-modal" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-image-container">
+                        <button class="modal-close" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img src="./assets/imgs/product/2.jpg" class="modal-image" alt="Full size product image"/>
+                        <button class="modal-nav modal-prev" onclick="navigateImages(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="modal-nav modal-next" onclick="navigateImages(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div>
-              <div
-                class="icons-brands d-flex gap-4 align-items-center justify-content-center"
-              >
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-facebook fa-2xl"></i
-                ></a>
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-instagram fa-2xl"></i
-                ></a>
-                <a href="#" class="icon text-black"
-                  ><i class="fa-brands fa-tiktok fa-2xl"></i
-                ></a>
-              </div>
-              <p class="mt-2 mb-0 text-center" style="font-size: 14px">
-                Follow Us To Get The Latest Updates
-              </p>
+        </div>
+    </div>
+
+    </div>
+
+      <footer class="footer mt-auto">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>About Us</h4>
+            <p>
+              Panda & Owl Store is your premier destination for unique and
+              high-quality products.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">About</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>Email: info@pandaowl.com</p>
+            <p>Phone: +1 234 567 890</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Panda & Owl Store. All rights reserved.</p>
+        </div>
       </div>
-    </div>
+    </footer>
+    
+      <button
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
 
     <!-- FontAwesome -->
     <script src="./assets/vendor/fontAwesome/js/all.min.js"></script>
@@ -212,5 +278,94 @@
     <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- main js -->
     <script src="./assets/js/main.js"></script>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+        const navToggler = document.getElementById("navTogglerIcon");
+        const navbarCollapse = document.getElementById("navbarNav");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const backToTop = document.getElementById("backToTop");
+
+        // Toggle menu open/close
+        navToggler.addEventListener("click", function () {
+          navbarCollapse.classList.toggle("show");
+          navToggler.classList.toggle("active");
+        });
+
+        // Close navbar on nav-link click (for mobile)
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            navbarCollapse.classList.remove("show");
+            navToggler.classList.remove("active");
+          });
+        });
+
+        // Show back-to-top button
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTop.style.display = "flex";
+          } else {
+            backToTop.style.display = "none";
+          }
+          // Auto-close navbar on scroll (for mobile)
+          if (navbarCollapse.classList.contains("show")) {
+            navbarCollapse.classList.remove("show");
+            navToggler.classList.remove("active");
+          }
+        });
+
+        // Scroll to top
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+   
+        // Image Gallery
+        const productImages = [
+            './assets/imgs/product/1.jpg',
+            './assets/imgs/product/2.jpg',
+            './assets/imgs/product/3.jpg'
+        ];
+        let currentImageIndex = 1;
+
+        function changeModalImage(index) {
+            currentImageIndex = index;
+            updateImages();
+        }
+
+        function navigateImages(direction) {
+            currentImageIndex = (currentImageIndex + direction + productImages.length) % productImages.length;
+            updateImages();
+        }
+
+        function updateImages() {
+            const modalImage = document.querySelector('.modal-image');
+            const mainImage = document.querySelector('.main-product-image');
+            const thumbnails = document.querySelectorAll('.product-thumbnail');
+            
+            modalImage.src = productImages[currentImageIndex];
+            mainImage.src = productImages[currentImageIndex];
+            
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === currentImageIndex);
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.querySelector('.image-modal.show')) {
+                if (e.key === 'ArrowLeft') navigateImages(-1);
+                if (e.key === 'ArrowRight') navigateImages(1);
+                if (e.key === 'Escape') document.querySelector('.modal-close').click();
+            }
+        });
+
+        // Update main image when clicking thumbnails
+        document.querySelectorAll('.product-thumbnail').forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                changeModalImage(index);
+            });
+        });
+    </script>
   </body>
 </html>
